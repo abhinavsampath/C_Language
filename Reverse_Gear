@@ -10,12 +10,14 @@ dis denotes total distance travelled*/
 int main()
 {
     int N,F,B,T,D,i;
+    printf("Enter the number of test-cases");
     scanf("%d",&N);  //N-> number of test cases
     
         for(i=1;i<=N;i++)  
         {
             if(N>=0||N<=100)
             {
+                printf("Enter the Forward-Displacement,Backward-Displacement,Time and Distance of wall for test-case %d", i);
                 scanf("%d%d%d%d",&F,&B,&T,&D);
                 int init=0,dis=0;
                 if(B>F&&B>0&&F>0&&T>0&&D>0)
@@ -40,7 +42,7 @@ int main()
                         dis+=D;
                     }
                     T*=dis;
-                    printf("%d ",T);
+                    printf("Time taken by the car to reach the wall is %d sec ",T);
                 }
                 printf("\n");
         }
