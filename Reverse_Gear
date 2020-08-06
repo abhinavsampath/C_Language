@@ -1,0 +1,50 @@
+//A program to find the time taken by the car to reach the wall at a distance D
+//The car moves Forward and Backward, first move is in backward direction and next in the forward before it reaches the wall
+/*F denotes forward displacement in meters
+B denotes backward displacement in meters
+T denotes time taken to cover 1 meter
+D denotes distance from Car’s starting position and the wall in backward direction
+init denotes position of car
+dis denotes total distance travelled*/
+#include<stdio.h>
+int main()
+{
+    int N,F,B,T,D,i;
+    scanf("%d",&N);  //N-> number of test cases
+    
+        for(i=1;i<=N;i++)  
+        {
+            if(N>=0||N<=100)
+            {
+                scanf("%d%d%d%d",&F,&B,&T,&D);
+                int init=0,dis=0;
+                if(B>F&&B>0&&F>0&&T>0&&D>0)
+                {
+                    while(init<D)
+                    {
+                         if(init<D)
+                        {
+                            init+=B;
+                            dis+=B;
+                        }
+                        if(init<D)
+                        {
+                            init-=F;
+                            dis+=F;
+                        }
+                    }
+                    if(init!=D)
+                    {
+                        D-=init;
+                        init+=D;
+                        dis+=D;
+                    }
+                    T*=dis;
+                    printf("%d ",T);
+                }
+                printf("\n");
+        }
+         
+    }
+   
+}
